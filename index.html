@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <!--[if lt IE 9]>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="ronbun.css" type="text/css" />
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: { equationNumbers: {autoNumber: "AMS"} }
+    });
+    </script>
+
+</head>
+
+<style type="text/css">
+    .space20{height:20px;}
+    .space25{height:25px;}
+    .space40{height:40px;}
+    .right{text-align: right;}
+</style>
+<style type="text/css">
+html{
+    height:100%;
+    padding: 0;
+    margin:0;
+    /*background-color: #525659;*/
+    background: linear-gradient(-135deg, #333, #000);
+}
+body{
+    background-color: #FFF;
+    padding: 60px 75px;
+    margin: 50px auto;
+    width: 750px;
+}
+</style>
+<style type="text/css">
+*{
+    font-family: serif;
+    font-size:14px;
+}
+h1.title{
+    font-size:20px;
+    text-align: center;
+}
+h1.subtitle{
+    font-size:16px;
+    text-align: center;
+}
+h2{font-size:14px;}
+
+p.author{
+    font-size:16px;
+    text-align: right;
+}
+p.page{
+    height:25px;
+    font-size:16px;
+    text-align: right;
+}
+p.header{
+    font-size:12px;
+    text-align: left;
+}
+</style>
+<body>
+
+
+<p class="page">111</p>
+<p class="header">チュートリアル「音環境の数値シミュレーション」<br>第一回 波動音響解析の技法</p>
+
+<div class="space20"></div>
+
+<h1 class="title">有限要素法による定常波動問題の基礎的研究</h1>
+<h1 class="subtitle">FINITE ELEMENT ANALYSIS OF SATURATED-<br>UNSATURATED  SEEPAGE IN SOIL</h1>
+
+<div class="space40"></div>
+
+<p class="author">正 員　　瀬　戸　秀　幸*,  　　正員　　山　本　善　之** <br>
+By Koichi AKAI, Yuzo OHNISHI and Makoto NISHIGAKI</p>
+
+<div class="space40"></div>
+
+<h2>1 緒 言</h2>
+
+<p>　海洋を航行する船舶と流体の相関は, 微小運動の仮定の下に一つの線形境界値問題として定式化され, 
+さらに定常周期運動に限ると, 楕円型混合境界値問題1, 2)に帰着する｡この解法には, 
+(1)等角写像1を用いる方法5～10), (2)特異点(素解)分布を用いる積分方程式による方法11～14), 
+(3)変分原理を用いる方法15～19)など3, 4)がある｡しかし, 
+(1)は円に写像できるLewisform形状にしか適用できないし, (2)には解が不定になるir
+regularfrequenciesがあるという困難がある。　また(3)は, 実際上簡単な形状しか扱え
+ないように思われる。　一方, 3次元の場合には, 球や回転楕円体などの特に簡単な形状の
+ものを除けば, thinship理論やstrip法などの細長船理論があるのみである。　他方, 構造解析
+の分野において, 有限要素法は画期的な成果を収めているが, 近年流体解析へも応
+用されはじめた｡さて, 波動問題の有限要素法による定式化は, Bai20)により, 無限遠
+に対する扱いが厳密であるという意味一で初めてなされた。　これらにより, 3次
+元解析の可能性が生じたといくてよいであろう。　有限要素法の利点は, 任意の幾何学
+的境界任意の水底および任意の船体形状(特に, ピルジキールがある場合など)
+の場合に容易に適用できること, irregularfrequenciesがないことである。　しかし, B
+aiの方法には, 数値計算上, 少なからぬ困難がある。　この方法の拡張およ
+び放射条件の考察は別途発表する予定である27)。　本研究では, 山本ら21)が幾何学
+的特異性を有する線形境界値問題の一般解法として提唱した重ね合わせ法を, 無限領域を
+占める流体解析へ拡張した｡すなわち, 遠方における解の漸近的解析表示により進行波を
+表させ, 有限要素解と漸近解との和(定式化1)または有限要素解(定式化II)が, 漸近解に滑
+らかに, 続するという条件を用いて有限要素法の定式化を行なった。　本方法によると, Ba
+iの方法と異なり, 行列は正値対称となるので, 大型構造物解析用に開発されたプログラムが
+, ほとんどそのまま利用できるという利点があり, 弾性振動, 前進速度を有する場合をも含
+めた3次元問題非定常運動に対しても同様に適用できるのみならず, 弾性波の伝播闘題へも拡
+張できる。　本論文では, 主に2次元定常radiation問題についてのみ述べるが, diffraction
+も同様に扱えることは明らかである。</p>
+
+<h2>2 基礎的な仮定および関係式</h2>
+<h3>2.1 座標系および記号</h3>
+
+<p>以下の理論展開においては,　流体は完全流体であり,　船体などの定常周期運動による微小境乱によって,
+流体粒子も微小な定常周期運動を行なっていると仮定する。　なお,　簡単のために,　船体は
+左右対称であるとし,　断面の幅をB,　吃水をTとする。　また,　船の動揺の円振動数をωで表わす。
+つぎに,　座標系はFig.1に示すように,　原点として船体中心線と静水面との交点をとり,　χ軸を静水面上
+に,　雪軸を鉛直下向きにとる。　流体が占める領域を\(\omega\)とし,　自由表面を\(SF\),　船体表面を\(SH\),　放射境界(または,　仮想境界)をSR,　水底をSBとする。　本論文において,　境界上の積分は領域の反時計まわりを正としR法線は,　流体から外向きを正ととることにする。　2.22次元問題における基礎式要約船体の運動によって生ずる流体の速度ポテンシャルを〓(φeiωt)とする。　今,　(2.2.1)とおく。　ここにXは振幅に相当する。　φは,　Laplaceの方程式(2.2.2)自由表面条件(2.2.3)船体表面条件(2.2.4)を満たす。　ただし,　vnは船体表面上の法線方向の速度で,　swaying,　heaving,　rolling(原点まわり)に対してそれぞれ,　(2.2.5)
+有限要素法による定常波動問</p>
+
+<p>
+\begin{equation}
+E = mc^2
+\end{equation}
+</p>
+
+<p>
+\begin{equation}
+\frac{D{\mathbf{u}}}{Dt}= {\frac 1\rho } \nabla \cdot  {\boldsymbol{\sigma}}+{\mathbf{g}}
+\end{equation}
+</p>
+
+</body>
+</html>
