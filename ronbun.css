@@ -1,0 +1,87 @@
+
+
+
+/******************\
+ Common
+\******************/
+
+html {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	/*background-color: #525659;*/
+	background: linear-gradient(-135deg, #333, #000);
+}
+
+body {
+	background-color: #FFF;
+	padding: 60px 75px;
+	margin: 50px auto;
+	width: 750px;
+}
+
+
+/******************\
+ Block
+\******************/
+* {
+	font-family: serif;
+	font-size: 14px;
+}
+
+h1,
+h1.title {
+	font-size: 20px;
+	text-align: center;
+	margin: 100px 0px;
+}
+
+	h1.subtitle {
+		font-size: 16px;
+		text-align: center;
+	}
+
+h2 {
+	font-size: 14px;
+}
+
+p.author {
+	font-size: 16px;
+	text-align: right;
+}
+
+p.page {
+	height: 25px;
+	font-size: 16px;
+	text-align: right;
+}
+
+p.header {
+	font-size: 12px;
+	text-align: left;
+}
+
+
+img {
+	max-width: 500px;
+}
+
+
+/******************\
+ Utility
+\******************/
+.space20 {
+	height: 20px;
+}
+
+.space25 {
+	height: 25px;
+}
+
+.space40 {
+	height: 40px;
+}
+
+.right {
+	text-align: right;
+}
